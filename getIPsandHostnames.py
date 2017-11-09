@@ -1,4 +1,5 @@
 import os
+import sys
 from os import walk
 import re
 import subprocess
@@ -6,8 +7,8 @@ import smtplib
 from email.mime.text import MIMEText
 
 
-mzUser = "mzadmin"
-mzPass = "dr"
+mzUser = sys.argv[1]#"mzadmin"
+mzPass = sys.argv[2] #"dr"
 dir = "d:/tmp/dcc/"
 tempDir = "/tmp/DCCWFExporter/"
 wflist = []
@@ -29,7 +30,7 @@ for line in p.stdout.readlines():
             mwf2 = re.search(r'(\S+)\.(\S+).*', wf)
             if mwf2 is not None:
                  wfname = mwf2.group(1)
-                if wfname not in wflist
+                 if wfname not in wflist:
                     wflist.append(wfname)
 
 retval = p.wait()
@@ -44,7 +45,7 @@ p.wait()
 
 
 for wf in wflist:
-    print mzCommandWfExport + wf +" " +tempDir+wf+".csv"
+    #print mzCommandWfExport + wf +" " +tempDir+wf+".csv"
     #p = subprocess.Popen(mzCommandWfExport + wf +" " +tempDir+wf+".csv")
     #retval = p.wait()
     os.system(mzCommandWfExport + wf +" " +tempDir+wf+".csv")
@@ -79,21 +80,26 @@ for file in files:
 
 message = ""
 for key in result:
-    message = message + key + " :: ".join(result[key], ",")+"\n"
+    if len(result[key])>0:
+        message = message + key + " :: "+",".join(result[key])+"\n"
     #result[key] =
 
-print(message)
+#print(message)
 
 
-msg = MIMEText(message)
+#msg = MIMEText(message)
 
 # me == the sender's email address
 # you == the recipient's email address
-msg['Subject'] = 'environment IPs' # textfile
-msg['From'] = 'ondrej.machacek@t-mobile.cz'
-msg['To'] = 'ondrej.machacek@t-mobile.cz'
+#msg['Subject'] = 'environment IPs' # textfile
+#msg['From'] = 'ondrej.machacek@t-mobile.cz'
+#msg['To'] = 'ondrej.machacek@t-mobile.cz'
 
 # Send the message via our own SMTP server.
-s = smtplib.SMTP('localhost')
-s.send_message(msg)
-s.quit()
+#s = smtplib.SMTP('localhost')
+#s.send_message(msg)
+#s.quit()
+file = open("/tmp/IPs.txt", "w")
+file.write(message)
+file.close()
+os.system('echo "see attachement"|mailx -s "environment IPs" -a /tmp/IPs.txt ondrej.machacek@t-mobile.cz')
