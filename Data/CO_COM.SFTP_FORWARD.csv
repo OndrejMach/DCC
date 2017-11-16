@@ -1,0 +1,11 @@
+"ID","Name","[Workflow]Execution Settings","[Target]Host","[Target]File System Type","[Target]Username","[Target]Password","[Target]Directory","[Target]Compression","[Target]Produce Empty Files","[Target]Use Temporay Directory","[Target]Accept New Host Keys","[Target]Additional Hosts","[Target]Command Line","[File]Directory","[File]Filename","[File]Inactive Source Warning (hours)"
+546,"DE_Forw_INW_RAW_10_102_133_7",,"10.102.133.7",,"ngibmd",DR_DEFAULT_KEY-80FFE4141344A050269F7485729C86E2,"/media/Data/Users/ngibmd/raw/INW",,,,,,,"../cdr/out/RAWFEED/CB/INW",,
+547,"DE_Forw_GSM_RAW_10_102_133_7",,"10.102.133.7",,"ngibmd",DR_DEFAULT_KEY-80FFE4141344A050269F7485729C86E2,"/media/Data/Users/ngibmd/raw/GSM",,,,,,,"../cdr/out/RAWFEED/CB/GSM",,
+549,"DE_Forw_GSM_CARMENLOCAL_TMDTA",,"localhost",,"mzIN5",DR_DEFAULT_KEY-A48650991C1872F98C081373DBA0AD7F,"./cdr/out/CARMEN/BMD_GSM",,,,,,,"../cdr/out/DE/GSM/IHC/TMDTA",,
+552,"DE_Forw_GGS_CARMENLOCAL_TMDTA",,"localhost",,"mzIN5",DR_DEFAULT_KEY-A48650991C1872F98C081373DBA0AD7F,"./cdr/out/CARMEN/BMD_CBB",,,,,,,"../cdr/out/DE/GGS/IHC/TMDTA",,
+553,"DE_Forw_GGS_CARMENLOCAL_REG01",,"localhost",,"mzIN5",DR_DEFAULT_KEY-A48650991C1872F98C081373DBA0AD7F,"./cdr/out/CARMEN/BMD_CBB",,,,,,,"../cdr/out/DE/GGS/IHC/REG01",,
+554,"DE_Forw_GSM_CARMENLOCAL_REG01",,"localhost",,"mzIN5",DR_DEFAULT_KEY-A48650991C1872F98C081373DBA0AD7F,"./cdr/out/CARMEN/BMD_GSM",,,,,,,"../cdr/out/DE/GSM/IHC/REG01",,
+555,"DE_Forw_INW_CARMENLOCAL_REG01",,"localhost",,"mzIN5",DR_DEFAULT_KEY-A48650991C1872F98C081373DBA0AD7F,"./cdr/out/CARMEN/BMD_IN",,,,,,,"../cdr/out/DE/INW/IHC/REG01",,
+559,"DE_Forw_SGS_CARMENLOCAL_REG01",,"localhost",,"mzIN5",DR_DEFAULT_KEY-A48650991C1872F98C081373DBA0AD7F,"./cdr/out/CARMEN/BMD_GSN",,,,,,,"../cdr/out/DE/SGS/IHC/REG01",,
+561,"DE_Forw_INW_CARMENLOCAL_TMDTA",,"localhost",,"mzIN5",DR_DEFAULT_KEY-A48650991C1872F98C081373DBA0AD7F,"./cdr/out/CARMEN/BMD_IN",,,,,,,"../cdr/out/DE/INW/IHC/TMDTA",,
+565,"DE_Forw_SGS_CARMENLOCAL_TMDTA",,"localhost",,"mzIN5",DR_DEFAULT_KEY-A48650991C1872F98C081373DBA0AD7F,"./cdr/out/CARMEN/BMD_GSN",,,,,,,"../cdr/out/DE/SGS/IHC/TMDTA",,

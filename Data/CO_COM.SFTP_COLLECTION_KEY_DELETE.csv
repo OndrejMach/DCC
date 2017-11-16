@@ -1,0 +1,217 @@
+"ID","Name","[Workflow]Execution Settings","[Workflow]Debug Type","[Forwarding]Directory","[Forwarding]Command","[Forwarding]Arguments","[Forwarding]Produce Empty File","[Archiving]Profile","[Archiving]Produce Empty Files","[RAW1]Directory","[RAW1]Command","[RAW1]Arguments","[RAW1]Produce Empty File","[RAW2]Directory","[RAW2]Command","[RAW2]Arguments","[RAW2]Produce Empty File","[RAW3]Directory","[RAW3]Command","[RAW3]Arguments","[RAW3]Produce Empty File","[Collection]Host","[Collection]Username","[Collection]Private Key","[Collection]Key Password","[Collection]Accept New Host Keys","[Collection]Directory","[Collection]Filename","[Collection]After Collection"
+52,"DE_Coll_INW_SOL14",#{type=execsettings#enabled=false},,"../cdr/collected/DE/INW/TMDTA",,,,"DE_INW.ArchiveCollected_INW",,"../cdr/out/RAWFEED/CB",,,,"../cdr/out/RAWFEED/CFDS",,,,"/dev/null",,,,"10.102.150.10","bdtest","-----BEGIN DSA PRIVATE KEY-----
+MIIBuwIBAAKBgQCW1YYG8hByersKLbXfc98P3nhDg1esaD2M/gOPD+ft4q9Nhcz3
+PV/4AYMpx85mK3TUBJvSXUxrSBEhGwX89H7asCDgVwqHMD+NgAMHXqVz6Nu78Aak
+EtBY1xCZK4geMhDWw66baJpLzGVzG6XEbJ9LAMexztVlquzJwCwVRJUkGQIVAMey
+yDpg4EJs8EKMk14BFGC8jpKVAoGACT2/BGXmSkVLDo151RuhnDZzxHUd/YJeLOPg
+yNc+qQbzadHyL3LqpqzkAeHjVPdY/MbZwXQG+GcsLKqTYcLVH/FjXerC5OgJoYy3
+C6AoyoCcEt8wWFxpoJuXzWofw2TQ+QXPsPoo7W1iSw+5VntdowD5kwnqry0vlc9X
+V3AZGAUCgYEAkquWo8eT7jqiSRNc6jOFhwL4pu5uYDEkyofqpzAz0U5dzWG9OOzl
+TpbhHyo0ROBBK1id69erTcYL6zHtA8i9ZlqirqJvSGUzqHZIfJqND5gSwxdUtRSw
+XR97m6gGMLZ4LBa8rnEszJ6ONj/p3P1/VNJUzS7jX7Y+aSUHNzUFq/0CFBcf0t2P
+1JkFEVsZub7ngGyMS7Rb
+-----END DSA PRIVATE KEY-----",DR_DEFAULT_KEY-EC741CF7A9E01D1F4AB62DC92F67E4DA,,"/cdr/VoLTE_1.0_IN_AMA",".*","Remove"
+58,"DE_Coll_CNF_INX_TMDTA_A181",,,"../cdr/collected/DE/CNF/TMDTA",,,,,,"/dev/null",,,,"/dev/null",,,,"/dev/null",,,,"QDE7T5.de.t-internal.com","carmena1","-----BEGIN DSA PRIVATE KEY-----
+MIIBuwIBAAKBgQCFxzhqRHhEWsJE/laIZuRLQrNaiv4v6AmCtMsB3jt3e7O0RQZl
+OSlgnWYs9fpb2sEsvm26IrEE7NaVktlJT5LA7WHZkjRZcPRqZdsffEEq0dRPHUfH
+jePwzl7+8xoS4jlG00rwtcRb4xQJDlww3HgT/2QiosvtMWkXkp7wrec07wIVAKyh
+602jwgvnxfX7uAPyxjDXKKYFAoGAD9+uFJqIOuWNY3S/6HkqYmE6PiY0lo9MCTHW
+3Ep/BQ+0BAhl9VSbVTN12EaS6RlAiyVF4o0lmaQTJH8ZqTJTnHDHJ8YhsvsJrWbx
+vPlptaojC9312/Z+kLd+6rQ0wHekalUCaopoJ+5hnN3/GiAwQgAdyrTN6F+hiT++
+u1B+P/oCgYAV837mEFhEV6hch6A+7tpoXy9FLt6YzqQekJzxDykBuoi0VxcyExha
+k0BBOHtZHvZmutfC2L29rL7PAaelSBQ89XviPvp4Yrw5R3IU+KuLsn6GG8UKZKzl
+x5bmogl6CZMW1oi9OhyfoBs1TFZSDVlkQmQpxFS0xbWohOJoEOEKRwIVAIENVS+x
+PWLU2+sMXXiggGZA+4Vu
+-----END DSA PRIVATE KEY-----",,,"/appl/local_7/carmen/Bmd_in/buffer/confirmation/BMD_RTSP",,
+59,"DE_Coll_CNF_GSM_TMDTA_A181",,,"../cdr/collected/DE/CNF/TMDTA",,,,,,"/dev/null",,,,"/dev/null",,,,"/dev/null",,,,"QDE7T5.de.t-internal.com","carmena1","-----BEGIN DSA PRIVATE KEY-----
+MIIBuwIBAAKBgQCFxzhqRHhEWsJE/laIZuRLQrNaiv4v6AmCtMsB3jt3e7O0RQZl
+OSlgnWYs9fpb2sEsvm26IrEE7NaVktlJT5LA7WHZkjRZcPRqZdsffEEq0dRPHUfH
+jePwzl7+8xoS4jlG00rwtcRb4xQJDlww3HgT/2QiosvtMWkXkp7wrec07wIVAKyh
+602jwgvnxfX7uAPyxjDXKKYFAoGAD9+uFJqIOuWNY3S/6HkqYmE6PiY0lo9MCTHW
+3Ep/BQ+0BAhl9VSbVTN12EaS6RlAiyVF4o0lmaQTJH8ZqTJTnHDHJ8YhsvsJrWbx
+vPlptaojC9312/Z+kLd+6rQ0wHekalUCaopoJ+5hnN3/GiAwQgAdyrTN6F+hiT++
+u1B+P/oCgYAV837mEFhEV6hch6A+7tpoXy9FLt6YzqQekJzxDykBuoi0VxcyExha
+k0BBOHtZHvZmutfC2L29rL7PAaelSBQ89XviPvp4Yrw5R3IU+KuLsn6GG8UKZKzl
+x5bmogl6CZMW1oi9OhyfoBs1TFZSDVlkQmQpxFS0xbWohOJoEOEKRwIVAIENVS+x
+PWLU2+sMXXiggGZA+4Vu
+-----END DSA PRIVATE KEY-----",,,"/appl/local_7/carmen/Bmd_in/buffer/confirmation/BMD_GSM",,
+60,"DE_Coll_CNF_XTC_TMDTA_A181",,,"../cdr/collected/DE/CNF/TMDTA",,,,,,"/dev/null",,,,"/dev/null",,,,"/dev/null",,,,"QDE7T5.de.t-internal.com","carmena1","-----BEGIN DSA PRIVATE KEY-----
+MIIBuwIBAAKBgQCFxzhqRHhEWsJE/laIZuRLQrNaiv4v6AmCtMsB3jt3e7O0RQZl
+OSlgnWYs9fpb2sEsvm26IrEE7NaVktlJT5LA7WHZkjRZcPRqZdsffEEq0dRPHUfH
+jePwzl7+8xoS4jlG00rwtcRb4xQJDlww3HgT/2QiosvtMWkXkp7wrec07wIVAKyh
+602jwgvnxfX7uAPyxjDXKKYFAoGAD9+uFJqIOuWNY3S/6HkqYmE6PiY0lo9MCTHW
+3Ep/BQ+0BAhl9VSbVTN12EaS6RlAiyVF4o0lmaQTJH8ZqTJTnHDHJ8YhsvsJrWbx
+vPlptaojC9312/Z+kLd+6rQ0wHekalUCaopoJ+5hnN3/GiAwQgAdyrTN6F+hiT++
+u1B+P/oCgYAV837mEFhEV6hch6A+7tpoXy9FLt6YzqQekJzxDykBuoi0VxcyExha
+k0BBOHtZHvZmutfC2L29rL7PAaelSBQ89XviPvp4Yrw5R3IU+KuLsn6GG8UKZKzl
+x5bmogl6CZMW1oi9OhyfoBs1TFZSDVlkQmQpxFS0xbWohOJoEOEKRwIVAIENVS+x
+PWLU2+sMXXiggGZA+4Vu
+-----END DSA PRIVATE KEY-----",,,"/appl/local_7/carmen/Bmd_in/buffer/confirmation/BMD_XTC",,
+61,"DE_Coll_CNF_XCL_TMDTA_A181",,,"../cdr/collected/DE/CNF/TMDTA",,,,,,"/dev/null",,,,"/dev/null",,,,"/dev/null",,,,"QDE7T5.de.t-internal.com","carmena1","-----BEGIN DSA PRIVATE KEY-----
+MIIBuwIBAAKBgQCFxzhqRHhEWsJE/laIZuRLQrNaiv4v6AmCtMsB3jt3e7O0RQZl
+OSlgnWYs9fpb2sEsvm26IrEE7NaVktlJT5LA7WHZkjRZcPRqZdsffEEq0dRPHUfH
+jePwzl7+8xoS4jlG00rwtcRb4xQJDlww3HgT/2QiosvtMWkXkp7wrec07wIVAKyh
+602jwgvnxfX7uAPyxjDXKKYFAoGAD9+uFJqIOuWNY3S/6HkqYmE6PiY0lo9MCTHW
+3Ep/BQ+0BAhl9VSbVTN12EaS6RlAiyVF4o0lmaQTJH8ZqTJTnHDHJ8YhsvsJrWbx
+vPlptaojC9312/Z+kLd+6rQ0wHekalUCaopoJ+5hnN3/GiAwQgAdyrTN6F+hiT++
+u1B+P/oCgYAV837mEFhEV6hch6A+7tpoXy9FLt6YzqQekJzxDykBuoi0VxcyExha
+k0BBOHtZHvZmutfC2L29rL7PAaelSBQ89XviPvp4Yrw5R3IU+KuLsn6GG8UKZKzl
+x5bmogl6CZMW1oi9OhyfoBs1TFZSDVlkQmQpxFS0xbWohOJoEOEKRwIVAIENVS+x
+PWLU2+sMXXiggGZA+4Vu
+-----END DSA PRIVATE KEY-----",,,"/appl/local_7/carmen/Bmd_in/buffer/confirmation/BMD_XCL",,
+62,"DE_Coll_CNF_XCFADM_TMDTA_A181",,,"../cdr/collected/DE/CNF/TMDTA",,,,,,"/dev/null",,,,"/dev/null",,,,"/dev/null",,,,"QDE7T5.de.t-internal.com","carmena1","-----BEGIN DSA PRIVATE KEY-----
+MIIBuwIBAAKBgQCFxzhqRHhEWsJE/laIZuRLQrNaiv4v6AmCtMsB3jt3e7O0RQZl
+OSlgnWYs9fpb2sEsvm26IrEE7NaVktlJT5LA7WHZkjRZcPRqZdsffEEq0dRPHUfH
+jePwzl7+8xoS4jlG00rwtcRb4xQJDlww3HgT/2QiosvtMWkXkp7wrec07wIVAKyh
+602jwgvnxfX7uAPyxjDXKKYFAoGAD9+uFJqIOuWNY3S/6HkqYmE6PiY0lo9MCTHW
+3Ep/BQ+0BAhl9VSbVTN12EaS6RlAiyVF4o0lmaQTJH8ZqTJTnHDHJ8YhsvsJrWbx
+vPlptaojC9312/Z+kLd+6rQ0wHekalUCaopoJ+5hnN3/GiAwQgAdyrTN6F+hiT++
+u1B+P/oCgYAV837mEFhEV6hch6A+7tpoXy9FLt6YzqQekJzxDykBuoi0VxcyExha
+k0BBOHtZHvZmutfC2L29rL7PAaelSBQ89XviPvp4Yrw5R3IU+KuLsn6GG8UKZKzl
+x5bmogl6CZMW1oi9OhyfoBs1TFZSDVlkQmQpxFS0xbWohOJoEOEKRwIVAIENVS+x
+PWLU2+sMXXiggGZA+4Vu
+-----END DSA PRIVATE KEY-----",,,"/appl/local_7/carmen/Bmd_in/buffer/confirmation/BMD_XCF_ADM",,
+63,"DE_Coll_CNF_WLAN_TMDTA_A181",,,"../cdr/collected/DE/CNF/TMDTA",,,,,,"/dev/null",,,,"/dev/null",,,,"/dev/null",,,,"QDE7T5.de.t-internal.com","carmena1","-----BEGIN DSA PRIVATE KEY-----
+MIIBuwIBAAKBgQCFxzhqRHhEWsJE/laIZuRLQrNaiv4v6AmCtMsB3jt3e7O0RQZl
+OSlgnWYs9fpb2sEsvm26IrEE7NaVktlJT5LA7WHZkjRZcPRqZdsffEEq0dRPHUfH
+jePwzl7+8xoS4jlG00rwtcRb4xQJDlww3HgT/2QiosvtMWkXkp7wrec07wIVAKyh
+602jwgvnxfX7uAPyxjDXKKYFAoGAD9+uFJqIOuWNY3S/6HkqYmE6PiY0lo9MCTHW
+3Ep/BQ+0BAhl9VSbVTN12EaS6RlAiyVF4o0lmaQTJH8ZqTJTnHDHJ8YhsvsJrWbx
+vPlptaojC9312/Z+kLd+6rQ0wHekalUCaopoJ+5hnN3/GiAwQgAdyrTN6F+hiT++
+u1B+P/oCgYAV837mEFhEV6hch6A+7tpoXy9FLt6YzqQekJzxDykBuoi0VxcyExha
+k0BBOHtZHvZmutfC2L29rL7PAaelSBQ89XviPvp4Yrw5R3IU+KuLsn6GG8UKZKzl
+x5bmogl6CZMW1oi9OhyfoBs1TFZSDVlkQmQpxFS0xbWohOJoEOEKRwIVAIENVS+x
+PWLU2+sMXXiggGZA+4Vu
+-----END DSA PRIVATE KEY-----",,,"/appl/local_7/carmen/Bmd_in/buffer/confirmation/BMD_WLAN",,
+64,"DE_Coll_CNF_VOL_TMDTA_A181",,,"../cdr/collected/DE/CNF/TMDTA",,,,,,"/dev/null",,,,"/dev/null",,,,"/dev/null",,,,"QDE7T5.de.t-internal.com","carmena1","-----BEGIN DSA PRIVATE KEY-----
+MIIBuwIBAAKBgQCFxzhqRHhEWsJE/laIZuRLQrNaiv4v6AmCtMsB3jt3e7O0RQZl
+OSlgnWYs9fpb2sEsvm26IrEE7NaVktlJT5LA7WHZkjRZcPRqZdsffEEq0dRPHUfH
+jePwzl7+8xoS4jlG00rwtcRb4xQJDlww3HgT/2QiosvtMWkXkp7wrec07wIVAKyh
+602jwgvnxfX7uAPyxjDXKKYFAoGAD9+uFJqIOuWNY3S/6HkqYmE6PiY0lo9MCTHW
+3Ep/BQ+0BAhl9VSbVTN12EaS6RlAiyVF4o0lmaQTJH8ZqTJTnHDHJ8YhsvsJrWbx
+vPlptaojC9312/Z+kLd+6rQ0wHekalUCaopoJ+5hnN3/GiAwQgAdyrTN6F+hiT++
+u1B+P/oCgYAV837mEFhEV6hch6A+7tpoXy9FLt6YzqQekJzxDykBuoi0VxcyExha
+k0BBOHtZHvZmutfC2L29rL7PAaelSBQ89XviPvp4Yrw5R3IU+KuLsn6GG8UKZKzl
+x5bmogl6CZMW1oi9OhyfoBs1TFZSDVlkQmQpxFS0xbWohOJoEOEKRwIVAIENVS+x
+PWLU2+sMXXiggGZA+4Vu
+-----END DSA PRIVATE KEY-----",,,"/appl/local_7/carmen/Bmd_in/buffer/confirmation/BMD_VOL",,
+65,"DE_Coll_CNF_VAC_TMDTA_A181",,,"../cdr/collected/DE/CNF/TMDTA",,,,,,"/dev/null",,,,"/dev/null",,,,"/dev/null",,,,"QDE7T5.de.t-internal.com","carmena1","-----BEGIN DSA PRIVATE KEY-----
+MIIBuwIBAAKBgQCFxzhqRHhEWsJE/laIZuRLQrNaiv4v6AmCtMsB3jt3e7O0RQZl
+OSlgnWYs9fpb2sEsvm26IrEE7NaVktlJT5LA7WHZkjRZcPRqZdsffEEq0dRPHUfH
+jePwzl7+8xoS4jlG00rwtcRb4xQJDlww3HgT/2QiosvtMWkXkp7wrec07wIVAKyh
+602jwgvnxfX7uAPyxjDXKKYFAoGAD9+uFJqIOuWNY3S/6HkqYmE6PiY0lo9MCTHW
+3Ep/BQ+0BAhl9VSbVTN12EaS6RlAiyVF4o0lmaQTJH8ZqTJTnHDHJ8YhsvsJrWbx
+vPlptaojC9312/Z+kLd+6rQ0wHekalUCaopoJ+5hnN3/GiAwQgAdyrTN6F+hiT++
+u1B+P/oCgYAV837mEFhEV6hch6A+7tpoXy9FLt6YzqQekJzxDykBuoi0VxcyExha
+k0BBOHtZHvZmutfC2L29rL7PAaelSBQ89XviPvp4Yrw5R3IU+KuLsn6GG8UKZKzl
+x5bmogl6CZMW1oi9OhyfoBs1TFZSDVlkQmQpxFS0xbWohOJoEOEKRwIVAIENVS+x
+PWLU2+sMXXiggGZA+4Vu
+-----END DSA PRIVATE KEY-----",,,"/appl/local_7/carmen/Bmd_in/buffer/confirmation/BMD_VAC",,
+66,"DE_Coll_CNF_SMC_TMDTA_A181",,,"../cdr/collected/DE/CNF/TMDTA",,,,,,"/dev/null",,,,"/dev/null",,,,"/dev/null",,,,"QDE7T5.de.t-internal.com","carmena1","-----BEGIN DSA PRIVATE KEY-----
+MIIBuwIBAAKBgQCFxzhqRHhEWsJE/laIZuRLQrNaiv4v6AmCtMsB3jt3e7O0RQZl
+OSlgnWYs9fpb2sEsvm26IrEE7NaVktlJT5LA7WHZkjRZcPRqZdsffEEq0dRPHUfH
+jePwzl7+8xoS4jlG00rwtcRb4xQJDlww3HgT/2QiosvtMWkXkp7wrec07wIVAKyh
+602jwgvnxfX7uAPyxjDXKKYFAoGAD9+uFJqIOuWNY3S/6HkqYmE6PiY0lo9MCTHW
+3Ep/BQ+0BAhl9VSbVTN12EaS6RlAiyVF4o0lmaQTJH8ZqTJTnHDHJ8YhsvsJrWbx
+vPlptaojC9312/Z+kLd+6rQ0wHekalUCaopoJ+5hnN3/GiAwQgAdyrTN6F+hiT++
+u1B+P/oCgYAV837mEFhEV6hch6A+7tpoXy9FLt6YzqQekJzxDykBuoi0VxcyExha
+k0BBOHtZHvZmutfC2L29rL7PAaelSBQ89XviPvp4Yrw5R3IU+KuLsn6GG8UKZKzl
+x5bmogl6CZMW1oi9OhyfoBs1TFZSDVlkQmQpxFS0xbWohOJoEOEKRwIVAIENVS+x
+PWLU2+sMXXiggGZA+4Vu
+-----END DSA PRIVATE KEY-----",,,"/appl/local_7/carmen/Bmd_in/buffer/confirmation/BMD_SMC",,
+67,"DE_Coll_CNF_RVS_TMDTA_A181",,,"../cdr/collected/DE/CNF/TMDTA",,,,,,"/dev/null",,,,"/dev/null",,,,"/dev/null",,,,"QDE7T5.de.t-internal.com","carmena1","-----BEGIN DSA PRIVATE KEY-----
+MIIBuwIBAAKBgQCFxzhqRHhEWsJE/laIZuRLQrNaiv4v6AmCtMsB3jt3e7O0RQZl
+OSlgnWYs9fpb2sEsvm26IrEE7NaVktlJT5LA7WHZkjRZcPRqZdsffEEq0dRPHUfH
+jePwzl7+8xoS4jlG00rwtcRb4xQJDlww3HgT/2QiosvtMWkXkp7wrec07wIVAKyh
+602jwgvnxfX7uAPyxjDXKKYFAoGAD9+uFJqIOuWNY3S/6HkqYmE6PiY0lo9MCTHW
+3Ep/BQ+0BAhl9VSbVTN12EaS6RlAiyVF4o0lmaQTJH8ZqTJTnHDHJ8YhsvsJrWbx
+vPlptaojC9312/Z+kLd+6rQ0wHekalUCaopoJ+5hnN3/GiAwQgAdyrTN6F+hiT++
+u1B+P/oCgYAV837mEFhEV6hch6A+7tpoXy9FLt6YzqQekJzxDykBuoi0VxcyExha
+k0BBOHtZHvZmutfC2L29rL7PAaelSBQ89XviPvp4Yrw5R3IU+KuLsn6GG8UKZKzl
+x5bmogl6CZMW1oi9OhyfoBs1TFZSDVlkQmQpxFS0xbWohOJoEOEKRwIVAIENVS+x
+PWLU2+sMXXiggGZA+4Vu
+-----END DSA PRIVATE KEY-----",,,"/appl/local_7/carmen/Bmd_in/buffer/confirmation/BMD_RVS",,
+68,"DE_Coll_CNF_RCF_TMDTA_A181",,,"../cdr/collected/DE/CNF/TMDTA",,,,,,"/dev/null",,,,"/dev/null",,,,"/dev/null",,,,"QDE7T5.de.t-internal.com","carmena1","-----BEGIN DSA PRIVATE KEY-----
+MIIBuwIBAAKBgQCFxzhqRHhEWsJE/laIZuRLQrNaiv4v6AmCtMsB3jt3e7O0RQZl
+OSlgnWYs9fpb2sEsvm26IrEE7NaVktlJT5LA7WHZkjRZcPRqZdsffEEq0dRPHUfH
+jePwzl7+8xoS4jlG00rwtcRb4xQJDlww3HgT/2QiosvtMWkXkp7wrec07wIVAKyh
+602jwgvnxfX7uAPyxjDXKKYFAoGAD9+uFJqIOuWNY3S/6HkqYmE6PiY0lo9MCTHW
+3Ep/BQ+0BAhl9VSbVTN12EaS6RlAiyVF4o0lmaQTJH8ZqTJTnHDHJ8YhsvsJrWbx
+vPlptaojC9312/Z+kLd+6rQ0wHekalUCaopoJ+5hnN3/GiAwQgAdyrTN6F+hiT++
+u1B+P/oCgYAV837mEFhEV6hch6A+7tpoXy9FLt6YzqQekJzxDykBuoi0VxcyExha
+k0BBOHtZHvZmutfC2L29rL7PAaelSBQ89XviPvp4Yrw5R3IU+KuLsn6GG8UKZKzl
+x5bmogl6CZMW1oi9OhyfoBs1TFZSDVlkQmQpxFS0xbWohOJoEOEKRwIVAIENVS+x
+PWLU2+sMXXiggGZA+4Vu
+-----END DSA PRIVATE KEY-----",,,"/appl/local_7/carmen/Bmd_in/buffer/confirmation/BMD_RCF",,
+69,"DE_Coll_CNF_POR_TMDTA_A181",,,"../cdr/collected/DE/CNF/TMDTA",,,,,,"/dev/null",,,,"/dev/null",,,,"/dev/null",,,,"QDE7T5.de.t-internal.com","carmena1","-----BEGIN DSA PRIVATE KEY-----
+MIIBuwIBAAKBgQCFxzhqRHhEWsJE/laIZuRLQrNaiv4v6AmCtMsB3jt3e7O0RQZl
+OSlgnWYs9fpb2sEsvm26IrEE7NaVktlJT5LA7WHZkjRZcPRqZdsffEEq0dRPHUfH
+jePwzl7+8xoS4jlG00rwtcRb4xQJDlww3HgT/2QiosvtMWkXkp7wrec07wIVAKyh
+602jwgvnxfX7uAPyxjDXKKYFAoGAD9+uFJqIOuWNY3S/6HkqYmE6PiY0lo9MCTHW
+3Ep/BQ+0BAhl9VSbVTN12EaS6RlAiyVF4o0lmaQTJH8ZqTJTnHDHJ8YhsvsJrWbx
+vPlptaojC9312/Z+kLd+6rQ0wHekalUCaopoJ+5hnN3/GiAwQgAdyrTN6F+hiT++
+u1B+P/oCgYAV837mEFhEV6hch6A+7tpoXy9FLt6YzqQekJzxDykBuoi0VxcyExha
+k0BBOHtZHvZmutfC2L29rL7PAaelSBQ89XviPvp4Yrw5R3IU+KuLsn6GG8UKZKzl
+x5bmogl6CZMW1oi9OhyfoBs1TFZSDVlkQmQpxFS0xbWohOJoEOEKRwIVAIENVS+x
+PWLU2+sMXXiggGZA+4Vu
+-----END DSA PRIVATE KEY-----",,,"/appl/local_7/carmen/Bmd_in/buffer/confirmation/BMD_POR",,
+70,"DE_Coll_CNF_MMS_TMDTA_A181",,,"../cdr/collected/DE/CNF/TMDTA",,,,,,"/dev/null",,,,"/dev/null",,,,"/dev/null",,,,"QDE7T5.de.t-internal.com","carmena1","-----BEGIN DSA PRIVATE KEY-----
+MIIBuwIBAAKBgQCFxzhqRHhEWsJE/laIZuRLQrNaiv4v6AmCtMsB3jt3e7O0RQZl
+OSlgnWYs9fpb2sEsvm26IrEE7NaVktlJT5LA7WHZkjRZcPRqZdsffEEq0dRPHUfH
+jePwzl7+8xoS4jlG00rwtcRb4xQJDlww3HgT/2QiosvtMWkXkp7wrec07wIVAKyh
+602jwgvnxfX7uAPyxjDXKKYFAoGAD9+uFJqIOuWNY3S/6HkqYmE6PiY0lo9MCTHW
+3Ep/BQ+0BAhl9VSbVTN12EaS6RlAiyVF4o0lmaQTJH8ZqTJTnHDHJ8YhsvsJrWbx
+vPlptaojC9312/Z+kLd+6rQ0wHekalUCaopoJ+5hnN3/GiAwQgAdyrTN6F+hiT++
+u1B+P/oCgYAV837mEFhEV6hch6A+7tpoXy9FLt6YzqQekJzxDykBuoi0VxcyExha
+k0BBOHtZHvZmutfC2L29rL7PAaelSBQ89XviPvp4Yrw5R3IU+KuLsn6GG8UKZKzl
+x5bmogl6CZMW1oi9OhyfoBs1TFZSDVlkQmQpxFS0xbWohOJoEOEKRwIVAIENVS+x
+PWLU2+sMXXiggGZA+4Vu
+-----END DSA PRIVATE KEY-----",,,"/appl/local_7/carmen/Bmd_in/buffer/confirmation/BMD_MMSC",,
+71,"DE_Coll_CNF_IVR_TMDTA_A181",,,"../cdr/collected/DE/CNF/TMDTA",,,,,,"/dev/null",,,,"/dev/null",,,,"/dev/null",,,,"QDE7T5.de.t-internal.com","carmena1","-----BEGIN DSA PRIVATE KEY-----
+MIIBuwIBAAKBgQCFxzhqRHhEWsJE/laIZuRLQrNaiv4v6AmCtMsB3jt3e7O0RQZl
+OSlgnWYs9fpb2sEsvm26IrEE7NaVktlJT5LA7WHZkjRZcPRqZdsffEEq0dRPHUfH
+jePwzl7+8xoS4jlG00rwtcRb4xQJDlww3HgT/2QiosvtMWkXkp7wrec07wIVAKyh
+602jwgvnxfX7uAPyxjDXKKYFAoGAD9+uFJqIOuWNY3S/6HkqYmE6PiY0lo9MCTHW
+3Ep/BQ+0BAhl9VSbVTN12EaS6RlAiyVF4o0lmaQTJH8ZqTJTnHDHJ8YhsvsJrWbx
+vPlptaojC9312/Z+kLd+6rQ0wHekalUCaopoJ+5hnN3/GiAwQgAdyrTN6F+hiT++
+u1B+P/oCgYAV837mEFhEV6hch6A+7tpoXy9FLt6YzqQekJzxDykBuoi0VxcyExha
+k0BBOHtZHvZmutfC2L29rL7PAaelSBQ89XviPvp4Yrw5R3IU+KuLsn6GG8UKZKzl
+x5bmogl6CZMW1oi9OhyfoBs1TFZSDVlkQmQpxFS0xbWohOJoEOEKRwIVAIENVS+x
+PWLU2+sMXXiggGZA+4Vu
+-----END DSA PRIVATE KEY-----",,,"/appl/local_7/carmen/Bmd_in/buffer/confirmation/BMD_IVR",,
+72,"DE_Coll_CNF_IN_TMDTA_A181",,,"../cdr/collected/DE/CNF/TMDTA",,,,,,"/dev/null",,,,"/dev/null",,,,"/dev/null",,,,"QDE7T5.de.t-internal.com","carmena1","-----BEGIN DSA PRIVATE KEY-----
+MIIBuwIBAAKBgQCFxzhqRHhEWsJE/laIZuRLQrNaiv4v6AmCtMsB3jt3e7O0RQZl
+OSlgnWYs9fpb2sEsvm26IrEE7NaVktlJT5LA7WHZkjRZcPRqZdsffEEq0dRPHUfH
+jePwzl7+8xoS4jlG00rwtcRb4xQJDlww3HgT/2QiosvtMWkXkp7wrec07wIVAKyh
+602jwgvnxfX7uAPyxjDXKKYFAoGAD9+uFJqIOuWNY3S/6HkqYmE6PiY0lo9MCTHW
+3Ep/BQ+0BAhl9VSbVTN12EaS6RlAiyVF4o0lmaQTJH8ZqTJTnHDHJ8YhsvsJrWbx
+vPlptaojC9312/Z+kLd+6rQ0wHekalUCaopoJ+5hnN3/GiAwQgAdyrTN6F+hiT++
+u1B+P/oCgYAV837mEFhEV6hch6A+7tpoXy9FLt6YzqQekJzxDykBuoi0VxcyExha
+k0BBOHtZHvZmutfC2L29rL7PAaelSBQ89XviPvp4Yrw5R3IU+KuLsn6GG8UKZKzl
+x5bmogl6CZMW1oi9OhyfoBs1TFZSDVlkQmQpxFS0xbWohOJoEOEKRwIVAIENVS+x
+PWLU2+sMXXiggGZA+4Vu
+-----END DSA PRIVATE KEY-----",,,"/appl/local_7/carmen/Bmd_in/buffer/confirmation/BMD_IN",,
+73,"DE_Coll_CNF_GSN_TMDTA_A181",,,"../cdr/collected/DE/CNF/TMDTA",,,,,,"/dev/null",,,,"/dev/null",,,,"/dev/null",,,,"QDE7T5.de.t-internal.com","carmena1","-----BEGIN DSA PRIVATE KEY-----
+MIIBuwIBAAKBgQCFxzhqRHhEWsJE/laIZuRLQrNaiv4v6AmCtMsB3jt3e7O0RQZl
+OSlgnWYs9fpb2sEsvm26IrEE7NaVktlJT5LA7WHZkjRZcPRqZdsffEEq0dRPHUfH
+jePwzl7+8xoS4jlG00rwtcRb4xQJDlww3HgT/2QiosvtMWkXkp7wrec07wIVAKyh
+602jwgvnxfX7uAPyxjDXKKYFAoGAD9+uFJqIOuWNY3S/6HkqYmE6PiY0lo9MCTHW
+3Ep/BQ+0BAhl9VSbVTN12EaS6RlAiyVF4o0lmaQTJH8ZqTJTnHDHJ8YhsvsJrWbx
+vPlptaojC9312/Z+kLd+6rQ0wHekalUCaopoJ+5hnN3/GiAwQgAdyrTN6F+hiT++
+u1B+P/oCgYAV837mEFhEV6hch6A+7tpoXy9FLt6YzqQekJzxDykBuoi0VxcyExha
+k0BBOHtZHvZmutfC2L29rL7PAaelSBQ89XviPvp4Yrw5R3IU+KuLsn6GG8UKZKzl
+x5bmogl6CZMW1oi9OhyfoBs1TFZSDVlkQmQpxFS0xbWohOJoEOEKRwIVAIENVS+x
+PWLU2+sMXXiggGZA+4Vu
+-----END DSA PRIVATE KEY-----",,,"/appl/local_7/carmen/Bmd_in/buffer/confirmation/BMD_GSN",,
+74,"DE_Coll_CNF_CBB_TMDTA_A181",,,"../cdr/collected/DE/CNF/TMDTA",,,,,,"/dev/null",,,,"/dev/null",,,,"/dev/null",,,,"QDE7T5.de.t-internal.com","carmena1","-----BEGIN DSA PRIVATE KEY-----
+MIIBuwIBAAKBgQCFxzhqRHhEWsJE/laIZuRLQrNaiv4v6AmCtMsB3jt3e7O0RQZl
+OSlgnWYs9fpb2sEsvm26IrEE7NaVktlJT5LA7WHZkjRZcPRqZdsffEEq0dRPHUfH
+jePwzl7+8xoS4jlG00rwtcRb4xQJDlww3HgT/2QiosvtMWkXkp7wrec07wIVAKyh
+602jwgvnxfX7uAPyxjDXKKYFAoGAD9+uFJqIOuWNY3S/6HkqYmE6PiY0lo9MCTHW
+3Ep/BQ+0BAhl9VSbVTN12EaS6RlAiyVF4o0lmaQTJH8ZqTJTnHDHJ8YhsvsJrWbx
+vPlptaojC9312/Z+kLd+6rQ0wHekalUCaopoJ+5hnN3/GiAwQgAdyrTN6F+hiT++
+u1B+P/oCgYAV837mEFhEV6hch6A+7tpoXy9FLt6YzqQekJzxDykBuoi0VxcyExha
+k0BBOHtZHvZmutfC2L29rL7PAaelSBQ89XviPvp4Yrw5R3IU+KuLsn6GG8UKZKzl
+x5bmogl6CZMW1oi9OhyfoBs1TFZSDVlkQmQpxFS0xbWohOJoEOEKRwIVAIENVS+x
+PWLU2+sMXXiggGZA+4Vu
+-----END DSA PRIVATE KEY-----",,,"/appl/local_7/carmen/Bmd_in/buffer/confirmation/BMD_CBB",,

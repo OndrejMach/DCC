@@ -1,0 +1,28 @@
+"ID","Name","[Workflow]Execution Settings","[Archiving]Profile","[Archiving]Produce Empty Files","[RAW1]Directory","[RAW1]Command","[RAW1]Arguments","[RAW1]Produce Empty File","[RAW2]Directory","[RAW2]Command","[RAW2]Arguments","[RAW2]Produce Empty File","[RAW3]Directory","[RAW3]Command","[RAW3]Arguments","[RAW3]Produce Empty File","[Collection]Host","[Collection]File System Type","[Collection]Username","[Collection]Private Key","[Collection]Key Password","[Collection]Retry Interval","[Collection]Max Retries","[Collection]Additional Hosts","[Collection]Directory","[Collection]Filename","[Collection]Compression","[Collection]Control File Mode","[Collection]Control File Script","[Collection]Move before Collecting","[Collection]Inactive Source Warning (hours)","[Collection]After Collection","[Forwarding]Directory","[Tar]Compression"
+68,"DE_Coll_NRT_ZNRT2",#{type=execsettings#enabled=false},"DE_NRT.ArchiveCollected",,"/dev/null",,,,"/dev/null",,,,"dev/null",,,,"10.100.73.23","Unix","ibmd_out","-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEA1BHPDW7b8GRFY8QdwvEM3P74F+ZPkHP0f7zMldFyRLeBnrvb
+OrD/3KjXzurFLhh8ZFzxqdon3U0DFadkRqmsXo2IefNnFoVFq7phHmNPBOHxe8uL
+OnaGx2BABy/SNL+S/q221RNRqyK7EfMFKPxetKNFMK4qVi9eWjvepwEq2YJh8KoG
+0JNnn0vuUiwZ3L9U0XovMSUXGq7x/MRZOyS30fM+7drFoZptqhK9erP0kRWij4xJ
+cDaSpEmVZ1AgEZ4JYTg/QCp8Gmq95hMl+L+wz/QV3/XysliTCo4UyL4lKsViE6sP
+lH8Q8Wo/rNodeo1KHBoi3QnOV2WTv5bwl2sOyQIBIwKCAQAweRliJ/fB6wiL1Q4d
+7fRPxUAFdniWC+AdMnfnuthKOJKn8Gyfs22ux4HI5TRiTr1YxMmF6LinnJL9opqT
+zwLTyJQ5IbEpuA/svOL/oaupWDcyPScjTkqxOpJKyRoar3IOU5eBKPy5ZwYv/Qh+
+ZZH9ZyXB++xreIqYSDLkWAnLUJWCEQTKVgKUY6tM96EnD+gJI6DgCtsFbUERSOVh
+P9V0vQkdbemL1AvnNJ6fPNcrCyPgA4V/neMaBwUHqtXgM1pGjEkk4HNbrO2acM7/
+zfAIHT4L/fKTvvdw0YILPDprH/PFFAsSAelh0IUUuM8vBVfa33qp7CRppwaDtp1l
+rmrrAoGBAP6j9cGVt1RTggsO5IjDdoMnAWqI9xUyJRyhQ4qJtOeA/k0EqskVMGDI
+mZzGVpty/AylXK2E0z60sXb5IZWdLF651p9QU9BRhNJamIJgQqFSC2kl4qlv9YR1
+LZFZyczmYUEbytJBrt6JvMzsxWY8qg8GPxFQdznx1jkR5IzBViObAoGBANUzqdBF
+o8gCldXSjDAOYzqCfOTT/oOwy9iv4eMn+IpyOeoIbx7IqljN8uq7syvByNj2IDPd
+EJJduWhsoyK/kP+yu9/ugLMX0VwHzRn5WBVaaL1FnEP7/5QHy+p9zNivuFZ5qIzk
+B9VbvSyFbCzQK9q4SVjlKXUXVJ4tc3M5OddrAoGBAK6cUL9CF0/EO+pTWuFwFsBV
+Qsy1sL4Twa07YYORoJ6+2kNw6iN8Pm5AaVWPUVSmnjSOpfNTxA29u4TIFweBuAZw
+za8Sgp15uinXuQjxjMZkJRTmx0+dOqP4lEZpdG8+45pcM05Y7PBectWpq+5Ve+0L
+mPXuCJzDFo2InLhKDy5bAoGBAIwaosqxa6CxPeRIiAJSmPqQQ3HNI5hePNA5EMh5
+Wi8X3OpADoHxlIOABgf3sEFTdVtf6UanNsaVXJUUMLBvQgcdrqkZEr7VIy3ZPaNa
+tjnq9F8fHYvC2ybDS3zWU2nSjxRBUYEoImeir4OoIoPZQWPYMDMaP9CaTYyERI2M
+AXBNAoGAYYEUKUAnbRQ0e+L0kumJJ0FIx6QnUsYBans99VOSTBFLmqWsKPgeBpNz
+VpB3wjGRJv+eYm45d9dDoMds42VlvnN5Lrr59MBjXtLKissEMlhFMA6rwAEEUfcY
+0CMQJc8PUVJqavxeNp4WL3kd/HFpji+4ZFc6R+Uu3mPoKDViN7o=
+-----END RSA PRIVATE KEY-----",DR_DEFAULT_KEY-017BB0B8FB061C1876D43DD75468AA40,,,,"/home/ibmd_out/out/",".*",,,,,,"Ignore","/pkg/moip/mo10751/work/mzIN5/collected/DE/NRT/ZNRT2","true"

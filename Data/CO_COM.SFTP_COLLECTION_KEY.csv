@@ -1,0 +1,25 @@
+"ID","Name","[Workflow]Execution Settings","[Forwarding]Directory","[Forwarding]Command","[Forwarding]Arguments","[Forwarding]Produce Empty File","[Archiving]Profile","[Archiving]Produce Empty Files","[RAW1]Directory","[RAW1]Command","[RAW1]Arguments","[RAW1]Produce Empty File","[RAW2]Directory","[RAW2]Command","[RAW2]Arguments","[RAW2]Produce Empty File","[RAW3]Directory","[RAW3]Command","[RAW3]Arguments","[RAW3]Produce Empty File","[Collection]Host","[Collection]File System Type","[Collection]Username","[Collection]Private Key","[Collection]Key Password","[Collection]Retry Interval","[Collection]Max Retries","[Collection]Additional Hosts","[Collection]Directory","[Collection]Filename","[Collection]Compression","[Collection]Control File Mode","[Collection]Control File Script","[Collection]Move before Collecting","[Collection]Inactive Source Warning (hours)","[Collection]After Collection"
+53,"DE_Coll_VSS_SOL14",#{type=execsettings#enabled=false},"../cdr/collected/DE/VSS/SOL14",,,,"DE_VSS.ArchiveCollected",,"/dev/null",,,,"/dev/null",,,,"/dev/null",,,,"10.102.144.10",,"bdtest","-----BEGIN DSA PRIVATE KEY-----
+MIIBuwIBAAKBgQCW1YYG8hByersKLbXfc98P3nhDg1esaD2M/gOPD+ft4q9Nhcz3
+PV/4AYMpx85mK3TUBJvSXUxrSBEhGwX89H7asCDgVwqHMD+NgAMHXqVz6Nu78Aak
+EtBY1xCZK4geMhDWw66baJpLzGVzG6XEbJ9LAMexztVlquzJwCwVRJUkGQIVAMey
+yDpg4EJs8EKMk14BFGC8jpKVAoGACT2/BGXmSkVLDo151RuhnDZzxHUd/YJeLOPg
+yNc+qQbzadHyL3LqpqzkAeHjVPdY/MbZwXQG+GcsLKqTYcLVH/FjXerC5OgJoYy3
+C6AoyoCcEt8wWFxpoJuXzWofw2TQ+QXPsPoo7W1iSw+5VntdowD5kwnqry0vlc9X
+V3AZGAUCgYEAkquWo8eT7jqiSRNc6jOFhwL4pu5uYDEkyofqpzAz0U5dzWG9OOzl
+TpbhHyo0ROBBK1id69erTcYL6zHtA8i9ZlqirqJvSGUzqHZIfJqND5gSwxdUtRSw
+XR97m6gGMLZ4LBa8rnEszJ6ONj/p3P1/VNJUzS7jX7Y+aSUHNzUFq/0CFBcf0t2P
+1JkFEVsZub7ngGyMS7Rb
+-----END DSA PRIVATE KEY-----",DR_DEFAULT_KEY-EC741CF7A9E01D1F4AB62DC92F67E4DA,,,,"/cdr/VoLTE_1.0_SCI",".*SS",,,,,,
+72,"DE_Coll_VSS_SOL15",#{type=execsettings#enabled=false},"../cdr/collected/DE/VSS/SOL14",,,,"DE_VSS.ArchiveCollected",,"/dev/null",,,,"/dev/null",,,,"/dev/null",,,,"10.102.150.10",,"bdtest","-----BEGIN DSA PRIVATE KEY-----
+MIIBuwIBAAKBgQCW1YYG8hByersKLbXfc98P3nhDg1esaD2M/gOPD+ft4q9Nhcz3
+PV/4AYMpx85mK3TUBJvSXUxrSBEhGwX89H7asCDgVwqHMD+NgAMHXqVz6Nu78Aak
+EtBY1xCZK4geMhDWw66baJpLzGVzG6XEbJ9LAMexztVlquzJwCwVRJUkGQIVAMey
+yDpg4EJs8EKMk14BFGC8jpKVAoGACT2/BGXmSkVLDo151RuhnDZzxHUd/YJeLOPg
+yNc+qQbzadHyL3LqpqzkAeHjVPdY/MbZwXQG+GcsLKqTYcLVH/FjXerC5OgJoYy3
+C6AoyoCcEt8wWFxpoJuXzWofw2TQ+QXPsPoo7W1iSw+5VntdowD5kwnqry0vlc9X
+V3AZGAUCgYEAkquWo8eT7jqiSRNc6jOFhwL4pu5uYDEkyofqpzAz0U5dzWG9OOzl
+TpbhHyo0ROBBK1id69erTcYL6zHtA8i9ZlqirqJvSGUzqHZIfJqND5gSwxdUtRSw
+XR97m6gGMLZ4LBa8rnEszJ6ONj/p3P1/VNJUzS7jX7Y+aSUHNzUFq/0CFBcf0t2P
+1JkFEVsZub7ngGyMS7Rb
+-----END DSA PRIVATE KEY-----",DR_DEFAULT_KEY-EC741CF7A9E01D1F4AB62DC92F67E4DA,,,,"/cdr/VoLTE_1.0_SCI",".*SS",,,,,,
