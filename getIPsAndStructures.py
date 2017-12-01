@@ -111,7 +111,7 @@ for (dirpath, dirnames, filenames) in walk(tempDir):
 
 result = dict()
 
-fileOut = open("/tmp/IPs.txt", "w")
+fileOut = open("/tmp/IPs.csv", "w")
 fileOut.write("wfname,name,host,username,port,directory\n")
 
 for file in files:
