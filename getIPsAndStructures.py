@@ -3,14 +3,24 @@ import sys
 from os import walk
 import re
 import subprocess
-import smtplib
-from email.mime.text import MIMEText
+#import smtplib
+#from email.mime.text import MIMEText
+import socket
+
 
 mzUser = sys.argv[1]#"mzadmin"
 mzPass = sys.argv[2] #"dr"
 dir = "d:/tmp/dcc/"
 tempDir = "/tmp/DataWFExporter/"
 wflist = []
+
+def resolve(fqdn):
+    ip = "IP N/A for "
+    try:
+        ip = socket.gethostbyname(fqdn)
+    except:
+        ip = ip + fqdn
+    return ip
 
 def getCSVLine(struct):
     ret = ""
@@ -58,7 +68,7 @@ def getIPs(fileContent, filename):
                 item = dict()
                 item["filename"] = filename
                 item["name"] = split[name][1:-1] if (name > -1) else "N/A"
-                item["host"] = split[host][1:-1] if (host > -1) else "N/A"
+                item["host"] = resolve(split[host][1:-1]) if (host > -1) else "N/A"
                 item["username"] = split[username][1:-1] if (username > -1) else "N/A"
                 #print("###### "+str(directory)+" "+str(len(split))+" "+"".join(split))
                 item["directory"] = split[directory][1:-1] if (directory > -1) else "N/A"
@@ -123,4 +133,4 @@ for file in files:
 
 fileOut.close()
 
-os.system('echo "see attachement"|mailx -s "environment IPs" -a /tmp/IPs.txt ondrej.machacek@t-mobile.cz')
+os.system('echo "see attachement"|mailx -s "environment IPs" -a /tmp/IPs.csv ondrej.machacek@t-mobile.cz')
