@@ -25,7 +25,7 @@ def resolve(fqdn):
 def getCSVLine(struct):
     ret = ""
     for item in struct:
-        ret = ret+item["filename"]+','+item["name"]+','+item["host"]+','+item["username"]+','+item["port"]+item["directory"]+"\n"
+        ret = ret+item["filename"]+','+item["name"]+','+item["host"]+','+item["username"]+','+item["port"]+','+item["directory"]+"\n"
     return ret
 
 def getIPs(fileContent, filename):
