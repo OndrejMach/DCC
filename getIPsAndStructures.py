@@ -6,10 +6,31 @@ import subprocess
 #import smtplib
 #from email.mime.text import MIMEText
 import socket
+import cx_Oracle
+
+#mzrepIN5/xg4kdu61@10.99.226.14:51521/tMZTUA1
+dbuser = "mzrepIN5"
+dbpass = "xg4kdu61"
+dbIP = "10.99.226.14"
+dbPort = "51521"
+dbSID = "tMZTUA1"
+dbRepUser = "mzrepIN5"
+
+if len(sys.argv) < 8:
+    print("help: python getIPsAndStructures.py <mzadmin> <mzadmin_pass> <db_user> <db_pass> <db_IP> <db_port> <db_SID> <db_mzrep_user>")
+    exit(1)
 
 
-mzUser = sys.argv[1]#"mzadmin"
-mzPass = sys.argv[2] #"dr"
+mzUser = sys.argv[1].strip()#"mzadmin"
+mzPass = sys.argv[2].strip() #"dr"
+dbuser = sys.argv[3].strip()#"mzrepIN5"
+dbpass = sys.argv[4].strip()#"xg4kdu61"
+dbIP = sys.argv[5].strip()#"10.99.226.14"
+dbPort = int(sys.argv[6].strip())#"51521"
+dbSID = sys.argv[7].strip()#"tMZTUA1"
+dbRepUser = sys.argv[8].strip()#"mzrepIN5"
+
+
 dir = "d:/tmp/dcc/"
 tempDir = "/tmp/DataWFExporter/"
 wflist = []
@@ -77,28 +98,76 @@ def getIPs(fileContent, filename):
         i = i + 1
     return ret
 
+def cutWf(wfname):
+    mwf2 = re.search(r'(\w+\.\w+)\..*', wfname)
+    if mwf2 is not None:
+        return mwf2.group(1)
+    return None
 
-mzCommand = "mzsh "+mzUser+"/"+mzPass+" wflist"
+    #mzrepIN5/xg4kdu61@10.99.226.14:51521/tMZTUA1
+    #CORE.SFTP_FORWARD_KEY.DE_Forw_CMD_RAW_10_102_133_7_MSS12
+def processQueryRes(result):
+    ret = []
+    for r in result:
+        res = cutWf(str(r))
+        if res not in ret:
+            ret.append(res)
+    return ret
+
+def getWfsfromDB(userdb,passworddb, sid, ip, port, mzrepuser):
+    retlist = []
+    connString = userdb+'/'+passworddb+'@'+str(ip)+':'+str(port)+'/'+sid
+
+    #dsn_tns = cx_Oracle.makedsn('10.99.226.14', 51521, 'tMZTUA1')
+    #con = cx_Oracle.connect(user='mzrepIN5', password='xg4kdu61', dsn=dsn_tns)
+
+    dsn_tns = cx_Oracle.makedsn(ip, port, sid)
+    con = cx_Oracle.connect(user=userdb, password=passworddb, dsn=dsn_tns)
+
+    print("trying to connec to Oracle "+connString)
+    #con = cx_Oracle.connect(connString)
+    cursor = con.cursor()
+    cursor.execute(
+        "select DISTINCT(w.WORKFLOWNAME) from "+mzrepuser+".CO_INPUTTABLE i, "+mzrepuser+".CO_WORKFLOWTABLE w where trunc(i.COLLECTIONDATETIME) > trunc(sysdate-5) and w.WORKFLOWID = i.COLLECTIONID and w.WORKFLOWNAME not like ('%DISK%')")
+    print("fetchall:")
+    retlist.extend(processQueryRes(cursor.fetchall()))
+    cursor.execute(
+        "select DISTINCT(w.WORKFLOWNAME) from "+mzrepuser+".CO_FORWARDINGTABLE f, "+mzrepuser+".CO_WORKFLOWTABLE w where trunc(f.FORWARDINGDATETIME) > trunc(sysdate-5) and w.WORKFLOWID = f.FORWARDINGID and w.WORKFLOWNAME not like ('%DISK%')")
+    retlist.extend(processQueryRes(cursor.fetchall()))
+
+    cursor.close()
+
+    con.close()
+    print(retlist)
+    return retlist
+
+
+#mzCommand = "mzsh "+mzUser+"/"+mzPass+" wflist"
 
 mzCommandWfExport = "mzsh "+mzUser+"/"+mzPass+" wfexport "
 
-p = subprocess.Popen(mzCommand, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-for line in p.stdout.readlines():
-    wf = line.decode("utf-8",'backslashreplace')
-    mWf = re.search(r'^(?=.*COLL.*)|(?=.*FORW.*)', wf.upper())
-    if (mWf is not None):
-        #print("go1")
-        mwf3 = re.search(r'.*DISK.*', wf.upper())
-        if mwf3 is None:
-            mwf2 = re.search(r'(\S+)\.(\S+).*', wf)
-            if mwf2 is not None:
-                 wfname = mwf2.group(1)
-                 if wfname not in wflist:
-                    wflist.append(wfname)
+#p = subprocess.Popen(mzCommand, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+#for line in p.stdout.readlines():
+#    wf = line.decode("utf-8",'backslashreplace')
+#    mWf = re.search(r'^(?=.*COLL.*)|(?=.*FORW.*)', wf.upper())
+#    if (mWf is not None):
+#        #print("go1")
+#        mwf3 = re.search(r'.*DISK.*', wf.upper())
+#        if mwf3 is None:
+#            mwf2 = re.search(r'(\S+)\.(\S+).*', wf)
+#            if mwf2 is not None:
+#                 wfname = mwf2.group(1)
+#                 if wfname not in wflist:
+#                    wflist.append(wfname)
 
-retval = p.wait()
+#retval = p.wait()
 
-p=subprocess.Popen("rm -rf "+tempDir,shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+
+wflist = getWfsfromDB(dbuser,dbpass, dbSID,dbIP,dbPort,dbRepUser)
+
+
+p=subprocess.Popen("rm -rf "+tempDir,shell=True, stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT)
 p.wait()
 
 p=subprocess.Popen("mkdir "+tempDir, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
