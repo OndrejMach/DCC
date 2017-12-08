@@ -6,7 +6,7 @@ import subprocess
 #import smtplib
 #from email.mime.text import MIMEText
 import socket
-import cx_Oracle
+#import cx_Oracle
 
 #mzrepIN5/xg4kdu61@10.99.226.14:51521/tMZTUA1
 dbuser = "mzrepIN5"
@@ -16,9 +16,9 @@ dbPort = "51521"
 dbSID = "tMZTUA1"
 dbRepUser = "mzrepIN5"
 
-if len(sys.argv) < 5:
+if len(sys.argv) < 6:
     #print("help: python getIPsAndStructures.py <mzadmin> <mzadmin_pass> <db_user> <db_pass> <db_IP> <db_port> <db_SID> <db_mzrep_user>")
-    print("help: python getIPsAndStructures.py <mzadmin> <mzadmin_pass> <db_user> <db_pass> <db_mzrep_user>")
+    print("help: python getIPsAndStructures.py <mzadmin> <mzadmin_pass> <db_user> <db_pass> <SID> <db_mzrep_user>")
     exit(1)
 
 
@@ -28,12 +28,12 @@ dbuser = sys.argv[3].strip()#"mzrepIN5"
 dbpass = sys.argv[4].strip()#"xg4kdu61"
 #dbIP = sys.argv[5].strip()#"10.99.226.14"
 #dbPort = int(sys.argv[6].strip())#"51521"
-#dbSID = sys.argv[7].strip()#"tMZTUA1"
-dbRepUser = sys.argv[5].strip()#"mzrepIN5"
+dbSID = sys.argv[5].strip()#"tMZTUA1"
+dbRepUser = sys.argv[6].strip()#"mzrepIN5"
 
 
 dir = "d:/tmp/dcc/"
-tempDir = "/tmp/DataWFExporter/"
+tempDir = "/tmp/DataWFExporter"+dbuser+"/"
 #wflist = []
 
 def resolve(fqdn):
@@ -94,7 +94,7 @@ def getIPs(fileContent, filename):
                 item["username"] = split[username][1:-1] if (username > -1) else "N/A"
                 #print("###### "+str(directory)+" "+str(len(split))+" "+"".join(split))
                 item["directory"] = split[directory][1:-1] if (directory > -1) else "N/A"
-                item["port"] = split[port][1:-1] if (port > -1) else "N/A"
+                item["port"] = split[port] if (port > -1) else "N/A"
                 ret.append(item)
         i = i + 1
     return ret
@@ -115,42 +115,42 @@ def processQueryRes(result):
             ret.append(res)
     return ret
 
-def getWfsfromDB(userdb,passworddb, sid, ip, port, mzrepuser):
-    retlist = []
-    connString = userdb+'/'+passworddb+'@'+str(ip)+':'+str(port)+'/'+sid
+#def getWfsfromDB(userdb,passworddb, sid, ip, port, mzrepuser):
+#     retlist = []
+#     connString = userdb+'/'+passworddb+'@'+str(ip)+':'+str(port)+'/'+sid
+#
+#     #dsn_tns = cx_Oracle.makedsn('10.99.226.14', 51521, 'tMZTUA1')
+#     #con = cx_Oracle.connect(user='mzrepIN5', password='xg4kdu61', dsn=dsn_tns)
+#
+#     dsn_tns = cx_Oracle.makedsn(ip, port, sid)
+#     con = cx_Oracle.connect(user=userdb, password=passworddb, dsn=dsn_tns)
+#
+#     print("trying to connec to Oracle "+connString)
+#     #con = cx_Oracle.connect(connString)
+#     cursor = con.cursor()
+#     cursor.execute(
+#         "select DISTINCT(w.WORKFLOWNAME) from "+mzrepuser+".CO_INPUTTABLE i, "+mzrepuser+".CO_WORKFLOWTABLE w where trunc(i.COLLECTIONDATETIME) > trunc(sysdate-5) and w.WORKFLOWID = i.COLLECTIONID and w.WORKFLOWNAME not like ('%DISK%')")
+#     print("fetchall:")
+#     retlist.extend(processQueryRes(cursor.fetchall()))
+#     cursor.execute(
+#         "select DISTINCT(w.WORKFLOWNAME) from "+mzrepuser+".CO_FORWARDINGTABLE f, "+mzrepuser+".CO_WORKFLOWTABLE w where trunc(f.FORWARDINGDATETIME) > trunc(sysdate-5) and w.WORKFLOWID = f.FORWARDINGID and w.WORKFLOWNAME not like ('%DISK%')")
+#     retlist.extend(processQueryRes(cursor.fetchall()))
+#
+#     cursor.close()
+#
+#     con.close()
+#     print(retlist)
+#     return retlist
 
-    #dsn_tns = cx_Oracle.makedsn('10.99.226.14', 51521, 'tMZTUA1')
-    #con = cx_Oracle.connect(user='mzrepIN5', password='xg4kdu61', dsn=dsn_tns)
 
-    dsn_tns = cx_Oracle.makedsn(ip, port, sid)
-    con = cx_Oracle.connect(user=userdb, password=passworddb, dsn=dsn_tns)
-
-    print("trying to connec to Oracle "+connString)
-    #con = cx_Oracle.connect(connString)
-    cursor = con.cursor()
-    cursor.execute(
-        "select DISTINCT(w.WORKFLOWNAME) from "+mzrepuser+".CO_INPUTTABLE i, "+mzrepuser+".CO_WORKFLOWTABLE w where trunc(i.COLLECTIONDATETIME) > trunc(sysdate-5) and w.WORKFLOWID = i.COLLECTIONID and w.WORKFLOWNAME not like ('%DISK%')")
-    print("fetchall:")
-    retlist.extend(processQueryRes(cursor.fetchall()))
-    cursor.execute(
-        "select DISTINCT(w.WORKFLOWNAME) from "+mzrepuser+".CO_FORWARDINGTABLE f, "+mzrepuser+".CO_WORKFLOWTABLE w where trunc(f.FORWARDINGDATETIME) > trunc(sysdate-5) and w.WORKFLOWID = f.FORWARDINGID and w.WORKFLOWNAME not like ('%DISK%')")
-    retlist.extend(processQueryRes(cursor.fetchall()))
-
-    cursor.close()
-
-    con.close()
-    print(retlist)
-    return retlist
-
-
-def getWfsfromSQLPLus(userdb,passworddb,mzrepuser):
+def getWfsfromSQLPLus(userdb,passworddb,mzrepuser,sid):
     ret= []
     sqlstmt = r'"SET HEADING OFF\n'
     sqlstmt = sqlstmt +"select DISTINCT(w.WORKFLOWNAME) from " + mzrepuser + ".CO_INPUTTABLE i, " + mzrepuser + ".CO_WORKFLOWTABLE w where trunc(i.COLLECTIONDATETIME) > trunc(sysdate-5) and w.WORKFLOWID = i.COLLECTIONID and w.WORKFLOWNAME not like ('%DISK%');"
     sqlstmt = sqlstmt+ r"\n"
     sqlstmt = sqlstmt+ "select DISTINCT(w.WORKFLOWNAME) from "+mzrepuser+".CO_FORWARDINGTABLE f, "+mzrepuser+".CO_WORKFLOWTABLE w where trunc(f.FORWARDINGDATETIME) > trunc(sysdate-5) and w.WORKFLOWID = f.FORWARDINGID and w.WORKFLOWNAME not like ('%DISK%');"
     sqlstmt = sqlstmt+'"'
-    sqlpluscommand = "echo -e "+sqlstmt +"|sqlplus -s "+userdb+"/"+passworddb
+    sqlpluscommand = "echo -e "+sqlstmt +"|sqlplus -s "+userdb+"/"+passworddb+"@"+sid
     #print(sqlpluscommand)
     p = subprocess.Popen(sqlpluscommand, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     for line in p.stdout.readlines():
@@ -184,7 +184,7 @@ mzCommandWfExport = "mzsh "+mzUser+"/"+mzPass+" wfexport "
 
 
 #wflist = getWfsfromDB(dbuser,dbpass, dbSID,dbIP,dbPort,dbRepUser)
-wflist = getWfsfromSQLPLus(dbuser,dbpass,dbRepUser)
+wflist = getWfsfromSQLPLus(dbuser,dbpass,dbRepUser, dbSID)
 
 #print(wflist)
 
@@ -212,7 +212,7 @@ for (dirpath, dirnames, filenames) in walk(tempDir):
 
 result = dict()
 
-fileOut = open("/tmp/IPs.csv", "w")
+fileOut = open("/tmp/"+dbuser+"IPs.csv", "w")
 fileOut.write("wfname,name,host,username,port,directory\n")
 
 for file in files:
@@ -224,4 +224,4 @@ for file in files:
 
 fileOut.close()
 
-os.system('echo "see attachement"|mailx -s "environment IPs" -a /tmp/IPs.csv ondrej.machacek@t-mobile.cz')
+os.system('echo "see attachement"|mailx -s "environment IPs" -a /tmp/'+dbuser+'IPs.csv ondrej.machacek@t-mobile.cz')
