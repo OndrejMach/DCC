@@ -16,8 +16,9 @@ dbPort = "51521"
 dbSID = "tMZTUA1"
 dbRepUser = "mzrepIN5"
 
-if len(sys.argv) < 8:
-    print("help: python getIPsAndStructures.py <mzadmin> <mzadmin_pass> <db_user> <db_pass> <db_IP> <db_port> <db_SID> <db_mzrep_user>")
+if len(sys.argv) < 5:
+    #print("help: python getIPsAndStructures.py <mzadmin> <mzadmin_pass> <db_user> <db_pass> <db_IP> <db_port> <db_SID> <db_mzrep_user>")
+    print("help: python getIPsAndStructures.py <mzadmin> <mzadmin_pass> <db_user> <db_pass> <db_mzrep_user>")
     exit(1)
 
 
@@ -25,15 +26,15 @@ mzUser = sys.argv[1].strip()#"mzadmin"
 mzPass = sys.argv[2].strip() #"dr"
 dbuser = sys.argv[3].strip()#"mzrepIN5"
 dbpass = sys.argv[4].strip()#"xg4kdu61"
-dbIP = sys.argv[5].strip()#"10.99.226.14"
-dbPort = int(sys.argv[6].strip())#"51521"
-dbSID = sys.argv[7].strip()#"tMZTUA1"
-dbRepUser = sys.argv[8].strip()#"mzrepIN5"
+#dbIP = sys.argv[5].strip()#"10.99.226.14"
+#dbPort = int(sys.argv[6].strip())#"51521"
+#dbSID = sys.argv[7].strip()#"tMZTUA1"
+dbRepUser = sys.argv[5].strip()#"mzrepIN5"
 
 
 dir = "d:/tmp/dcc/"
 tempDir = "/tmp/DataWFExporter/"
-wflist = []
+#wflist = []
 
 def resolve(fqdn):
     ip = "IP N/A for "
@@ -142,6 +143,25 @@ def getWfsfromDB(userdb,passworddb, sid, ip, port, mzrepuser):
     return retlist
 
 
+def getWfsfromSQLPLus(userdb,passworddb,mzrepuser):
+    ret= []
+    sqlstmt = r'"SET HEADING OFF\n'
+    sqlstmt = sqlstmt +"select DISTINCT(w.WORKFLOWNAME) from " + mzrepuser + ".CO_INPUTTABLE i, " + mzrepuser + ".CO_WORKFLOWTABLE w where trunc(i.COLLECTIONDATETIME) > trunc(sysdate-5) and w.WORKFLOWID = i.COLLECTIONID and w.WORKFLOWNAME not like ('%DISK%');"
+    sqlstmt = sqlstmt+ r"\n"
+    sqlstmt = sqlstmt+ "select DISTINCT(w.WORKFLOWNAME) from "+mzrepuser+".CO_FORWARDINGTABLE f, "+mzrepuser+".CO_WORKFLOWTABLE w where trunc(f.FORWARDINGDATETIME) > trunc(sysdate-5) and w.WORKFLOWID = f.FORWARDINGID and w.WORKFLOWNAME not like ('%DISK%');"
+    sqlstmt = sqlstmt+'"'
+    sqlpluscommand = "echo -e "+sqlstmt +"|sqlplus -s "+userdb+"/"+passworddb
+    #print(sqlpluscommand)
+    p = subprocess.Popen(sqlpluscommand, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    for line in p.stdout.readlines():
+        wf = line.decode("utf-8",'backslashreplace')
+        if len(wf) >0:
+            wfname = cutWf(wf)
+            if wfname is not None and wfname not in ret:
+                ret.append(wfname)
+    return ret
+
+
 #mzCommand = "mzsh "+mzUser+"/"+mzPass+" wflist"
 
 mzCommandWfExport = "mzsh "+mzUser+"/"+mzPass+" wfexport "
@@ -163,8 +183,10 @@ mzCommandWfExport = "mzsh "+mzUser+"/"+mzPass+" wfexport "
 #retval = p.wait()
 
 
-wflist = getWfsfromDB(dbuser,dbpass, dbSID,dbIP,dbPort,dbRepUser)
+#wflist = getWfsfromDB(dbuser,dbpass, dbSID,dbIP,dbPort,dbRepUser)
+wflist = getWfsfromSQLPLus(dbuser,dbpass,dbRepUser)
 
+#print(wflist)
 
 p=subprocess.Popen("rm -rf "+tempDir,shell=True, stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT)
