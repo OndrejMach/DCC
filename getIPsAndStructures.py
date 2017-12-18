@@ -78,24 +78,28 @@ def getIPs(fileContent, filename):
     linePrev=""
     while i < len(fileContent):
         line = fileContent[i]
-        if line.find("-----BEGIN")>-1 and line.find("PRIVATE KEY-----")>-1:
-            linePrev = line[:-1]
-            #print(linePrev)
-        else :
-            if (line.find(",")>-1):
-                split = (linePrev+line).split(",") if (len(linePrev)>1) else line.split(",")
-                linePrev=""
-                #print("delka pole "+str(len(split)))
+        #print(i)
+        if (line.find("-----BEGIN") > -1 and line.find("PRIVATE KEY-----") > -1):
+            linePrev = linePrev + line[:-1]
+            while not (line.find("-----END") > -1 and line.find("PRIVATE KEY-----")):
+                i=i+1
+                line = fileContent[i]
+        if (line.find(',')>-1):
+            split = (linePrev+line).split(",") if (len(linePrev)>1) else line.split(",")
+            linePrev=""
+            #print("delka pole "+str(len(split)))
+            #print(filename)
+            item = dict()
+            item["filename"] = filename
+            item["name"] = split[name][1:-1] if (name > -1) else "N/A"
+            item["host"] = resolve(split[host][1:-1]) if (host > -1) else "N/A"
+            item["username"] = split[username][1:-1] if (username > -1) else "N/A"
+            #print("###### " + str(directory) + " " + str(len(split)) + " " + "".join(split))
+            #print("LINE ---------" + split[directory] + "------------------------")
+            item["directory"] = split[directory][1:-1] if (directory > -1) else "N/A"
+            item["port"] = split[port] if (port > -1) else "N/A"
+            ret.append(item)
 
-                item = dict()
-                item["filename"] = filename
-                item["name"] = split[name][1:-1] if (name > -1) else "N/A"
-                item["host"] = resolve(split[host][1:-1]) if (host > -1) else "N/A"
-                item["username"] = split[username][1:-1] if (username > -1) else "N/A"
-                #print("###### "+str(directory)+" "+str(len(split))+" "+"".join(split))
-                item["directory"] = split[directory][1:-1] if (directory > -1) else "N/A"
-                item["port"] = split[port] if (port > -1) else "N/A"
-                ret.append(item)
         i = i + 1
     return ret
 
