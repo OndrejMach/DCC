@@ -7,6 +7,8 @@ import subprocess
 #from email.mime.text import MIMEText
 import socket
 #import cx_Oracle
+import datetime
+
 
 #mzrepIN5/xg4kdu61@10.99.226.14:51521/tMZTUA1
 dbuser = "mzrepIN5"
@@ -35,6 +37,13 @@ dbRepUser = sys.argv[6].strip()#"mzrepIN5"
 dir = "d:/tmp/dcc/"
 tempDir = "/tmp/DataWFExporter"+dbuser+"/"
 #wflist = []
+
+def padString(num):
+    return str(num) if num>9 else ("0"+str(num))
+
+def getDateStamp():
+    now = datetime.datetime.now()
+    return padString(now.month)+padString(now.day)+padString(now.hour)
 
 def resolve(fqdn):
     ip = "IP N/A for "
@@ -216,7 +225,7 @@ for (dirpath, dirnames, filenames) in walk(tempDir):
 
 result = dict()
 
-fileOut = open("/tmp/"+dbuser+"IPs.csv", "w")
+fileOut = open("/tmp/"+dbuser+"IPs"+getDateStamp()+".csv", "w")
 fileOut.write("wfname,name,host,username,port,directory\n")
 
 for file in files:
